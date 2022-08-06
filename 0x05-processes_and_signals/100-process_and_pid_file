@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Process and PID file
-echo $$ > /var/run/holbertonscript.pid
+echo $$ > /var/run/myscript.pid
 trap sigterm 15
 sigterm()
 {
     echo "I hate the kill command"
-    rm -rf /var/run/holbertonscript.pid
+    rm -rf /var/run/myscript.pid
     exit 0
 }
 trap sigint 2
@@ -16,7 +16,7 @@ sigint()
 trap sigquit 3
 sigquit()
 {
-    rm -rf /var/run/holbertonscript.pid
+    rm -rf /var/run/myscript.pid
     exit 0
 }
 while ((1))
